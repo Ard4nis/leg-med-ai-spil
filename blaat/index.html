@@ -4,204 +4,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10213b">
 <title>Vejen til blåt bælte · Arirang</title>
 <style>
-:root {
-  font-family:system-ui,-apple-system,sans-serif;
-  color:#182842;
-  background:#f3f6fc;
-}
-* {box-sizing:border-box}
-body {margin:0}
-header {
-  padding:27px 18px;
-  background:linear-gradient(120deg,#10223e,#2453b4);
-  color:white;
-}
-header h1 {
-  margin:5px 0;
-  font-size:clamp(26px,6vw,40px);
-}
-header p {margin:6px 0;color:#dce8ff}
-.wrap {max-width:880px;margin:auto}
-nav {
-  display:flex;
-  overflow:auto;
-  background:white;
-  border-bottom:1px solid #dce4f0;
-  position:sticky;
-  top:0;
-}
-nav button {
-  border:0;
-  background:white;
-  padding:13px;
-  white-space:nowrap;
-  color:#536480;
-  font-weight:700;
-}
-nav button.on {
-  color:#174cbd;
-  border-bottom:3px solid #174cbd;
-}
-main {padding:20px 14px 45px}
-.card {
-  background:white;
-  border:1px solid #dae3f0;
-  border-radius:15px;
-  padding:17px;
-  margin:0 0 13px;
-  box-shadow:0 4px 15px #16305a08;
-}
-.card h3 {margin:0 0 7px}
-.muted,small {color:#64748b}
-h2 {margin:0 0 10px}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px;
-}
-.btn {
-  border:1px solid #234fb0;
-  background:#2453b4;
-  color:white;
-  border-radius:10px;
-  padding:10px 13px;
-  margin:4px 6px 4px 0;
-  font-weight:700;
-}
-.btn.alt {
-  background:#edf3fd;
-  color:#2453b4;
-  border-color:#d6e3f5;
-}
-.btn.chosen {
-  background:#d8f6e5;
-  color:#166340;
-  border-color:#58ac81;
-}
-button {cursor:pointer;font:inherit}
-button:focus-visible {
-  outline:3px solid orange;
-  outline-offset:2px;
-}
-.flash {
-  min-height:220px;
-  display:grid;
-  place-content:center;
-  text-align:center;
-  background:#eaf2ff;
-  border-radius:15px;
-  padding:25px;
-  margin:15px 0;
-}
-.flash strong {font-size:30px}
-.term {
-  padding:14px 0;
-  border-top:1px solid #e4eaf3;
-}
-.term:first-of-type {border:0}
-.term h3 {margin:0 0 3px;font-size:17px}
-.term p {margin:4px 0}
-.check {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  padding:10px 0;
-  border-bottom:1px solid #e4eaf2;
-}
-.check input {
-  width:21px;
-  height:21px;
-  accent-color:#25835f;
-}
-.option {
-  display:block;
-  text-align:left;
-  background:white;
-  color:#182842;
-  border:1px solid #d4deeb;
-  border-radius:10px;
-  padding:13px;
-  width:100%;
-  margin:8px 0;
-}
-.option.good {
-  background:#d9f5e7;
-  border-color:#52ab80;
-}
-.option.bad {
-  background:#ffebeb;
-  border-color:#e59a9a;
-}
-.note {
-  background:#fff7e8;
-  border-left:4px solid #dfad4a;
-  padding:12px;
-  margin:15px 0;
-  border-radius:6px;
-}
-.meter {
-  background:#e1e8f4;
-  border-radius:100px;
-  height:9px;
-  overflow:hidden;
-}
-.meter span {
-  display:block;
-  background:#40a67b;
-  height:100%;
-}
-footer {
-  text-align:center;
-  font-size:12px;
-  color:#67748a;
-  padding:24px 14px;
-}
-@media(max-width:480px) {
-  nav button {padding:11px 9px;font-size:13px}
+:root{font-family:system-ui,-apple-system,sans-serif;color:#182842;background:#f3f6fc;--blue:#2453b4;--line:#dce4f0}
+*{box-sizing:border-box}
+body{margin:0}
+button,input{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #efb94a;outline-offset:2px}
+header{padding:27px 18px;background:linear-gradient(120deg,#10223e,#2453b4);color:white}
+header h1{margin:5px 0;font-size:clamp(26px,6vw,40px)}
+header p{margin:6px 0;color:#dce8ff}
+.wrap{max-width:880px;margin:auto}
+nav{display:flex;overflow:auto;background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{border:0;background:white;padding:13px;white-space:nowrap;color:#536480;font-weight:700}
+nav button.on{color:#174cbd;border-bottom:3px solid #174cbd}
+main{padding:20px 14px 45px}
+.card{background:white;border:1px solid #dae3f0;border-radius:15px;padding:17px;margin:0 0 13px;box-shadow:0 4px 15px #16305a08}
+.card h3{margin:0 0 7px}
+.muted,small{color:#64748b}
+h2{margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.btn{border:1px solid var(--blue);background:var(--blue);color:white;border-radius:10px;padding:10px 13px;margin:4px 6px 4px 0;font-weight:700}
+.btn.alt{background:#edf3fd;color:var(--blue);border-color:#d6e3f5}
+.btn.chosen{background:#d8f6e5;color:#166340;border-color:#58ac81}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.flash{min-height:220px;display:grid;place-content:center;text-align:center;background:#eaf2ff;border-radius:15px;padding:25px;margin:15px 0}
+.flash strong{font-size:30px}
+.term{padding:15px 0;border-top:1px solid #e4eaf3}
+.term:first-of-type{border:0}
+.term h3{margin:0 0 3px;font-size:17px}
+.term p{margin:4px 0}
+.check{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid #e4eaf2}
+.check input{width:21px;height:21px;accent-color:#25835f}
+.option{display:block;text-align:left;background:white;color:#182842;border:1px solid #d4deeb;border-radius:10px;padding:13px;width:100%;margin:8px 0}
+.option.good{background:#d9f5e7;border-color:#52ab80}
+.option.bad{background:#ffebeb;border-color:#e59a9a}
+.note{background:#fff7e8;border-left:4px solid #dfad4a;padding:12px;margin:15px 0;border-radius:6px}
+.meter{background:#e1e8f4;border-radius:100px;height:9px;overflow:hidden}
+.meter span{display:block;background:#40a67b;height:100%}
+.badge{display:inline-block;font-size:12px;font-weight:750;padding:3px 9px;border-radius:20px;background:#e8eefb;color:#2453b4}
+.badge.exact{background:#def6e7;color:#14613d}
+.video-box{margin:13px 0 8px;background:#f1f5fc;border:1px solid #dce4f0;border-radius:12px;padding:12px}
+.video-box p{font-size:14px}
+.player{aspect-ratio:16/9;background:#10213b;border-radius:10px;overflow:hidden;margin:10px 0}
+.player iframe{width:100%;height:100%;border:0}
+.link{color:#2453b4;font-weight:650;overflow-wrap:anywhere}
+.add-video{margin-top:12px;padding-top:12px;border-top:1px dashed #d4dff0}
+.add-video summary{font-size:14px;color:#34588e;cursor:pointer}
+.add-video label{display:block;font-size:13px;margin-top:10px}
+.add-video input{display:block;width:100%;padding:11px;border:1px solid #bdcce0;border-radius:9px;margin:6px 0}
+.error{color:#a12b28;font-size:13px}
+footer{text-align:center;font-size:12px;color:#67748a;padding:24px 14px}
+@media(max-width:480px){
+  nav button{padding:11px 9px;font-size:13px}
+  .btn{padding:9px 11px}
 }
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
     <div>🥋 ARIRANG · HJEMMETRÆNER</div>
     <h1>Vejen til blåt bælte</h1>
     <p>Grønt bælte (7. kup) → Blåt bælte (6. kup)</p>
     <p id="progress"></p>
-    <div class="meter">
-      <span id="bar" style="width:0%"></span>
-    </div>
+    <div class="meter"><span id="bar" style="width:0%"></span></div>
   </div>
 </header>
 
-<nav id="nav">
+<nav id="nav" aria-label="Træningsområder">
   <button data-tab="home">Overblik</button>
   <button data-tab="cards">Flashcards</button>
   <button data-tab="tech">Teknikker</button>
   <button data-tab="drills">Øvelser</button>
+  <button data-tab="videos">Videoer</button>
   <button data-tab="quiz">Miniprøve</button>
 </nav>
 
 <main class="wrap" id="view"></main>
 
 <footer>
-  Uofficiel studiehjælp baseret på Arirang Taekwon
-  Dojangs pensum af 02.06.2024, side 18.
+  Uofficiel studiehjælp baseret på Arirang Taekwon Dojangs
+  pensum af 02.06.2024, side 18. Videomaterialet er fra
+  eksterne udgivere og er ikke godkendt af Arirang.
   Trænerens instruktion har altid forrang.
-  Fremskridt gemmes kun på enheden.
+  Fremskridt og egne videolinks gemmes lokalt i browseren.
 </footer>
 
 <script>
 'use strict';
 
-const words = [
-  ['Mit palmok','mit pahl måk',
-   'Undersiden af underarmen','blå'],
-  ['Me jumeok','me dju måk',
-   'Ydersiden af knyttet hånd','blå'],
+// Official sources and video categories.
+// Only Taegeuk Sah Jang is marked as an exact match.
+
+const VIDEOS={
+  form4:{
+    id:'Fc75IxwD5VY',
+    title:'Taegeuk 4 Jang – undervisning',
+    source:'Kukkiwon',
+    exact:true,
+    description:'Officiel undervisning i præcis denne poomse.'
+  },
+  stances:{
+    id:'mnBjR5vhU0Y',
+    title:'Fundamental Taekwondo Stances',
+    source:'Korean Cultural Centre Nigeria',
+    exact:false,
+    description:'Generel undervisning om stande; ikke en bekræftet demonstration af Oreun/Oen seogi.'
+  },
+  hands:{
+    id:'QDK45OHohX8',
+    title:'Basic Punches and Blocks',
+    source:'Korean Cultural Centre Nigeria',
+    exact:false,
+    description:'Generel håndteknik; ikke nødvendigvis netop den viste teknik.'
+  },
+  combinations:{
+    id:'GNKwWtOvcXo',
+    title:'Combined Hands Techniques',
+    source:'Korean Cultural Centre Nigeria',
+    exact:false,
+    description:'Generelle kombinerede håndteknikker; ikke et direkte match til alle håndslag.'
+  },
+  kicks:{
+    id:'TjCNNQCFpew',
+    title:'Fundamentals of Taekwondo Kicks',
+    source:'Korean Cultural Centre Nigeria',
+    exact:false,
+    description:'Grundtræning i spark; kan vise andre spark end 6. kup-pensummet.'
+  },
+  kickcombos:{
+    id:'pq47HhRn1ro',
+    title:'Combined Taekwondo Kick Techniques',
+    source:'Korean Cultural Centre Nigeria',
+    exact:false,
+    description:'Generelle sparkekombinationer; ikke specifikt verificeret som Ieo/Seokeo chagi.'
+  }
+};
+
+const words=[
+  ['Mit palmok','mit pahl måk','Undersiden af underarmen','blå'],
+  ['Me jumeok','me dju måk','Ydersiden af knyttet hånd','blå'],
   ['Palkoop','pahl kop','Albue','blå'],
   ['Dari','dah ri','Ben','blå'],
   ['Mooreup','moo røp','Knæ','blå'],
@@ -220,87 +165,33 @@ const words = [
   level:w[3]
 }));
 
-const techniques = [
-  [
-    'Standteknikker',
-    'Oreun seogi',
-    'o røn så gi',
-    'Højre stand'
-  ],
-  [
-    'Standteknikker',
-    'Oen seogi',
-    'årn så gi',
-    'Venstre stand'
-  ],
-  [
-    'Håndteknikker',
-    'Me jumeok momtong naeryo chigi',
-    'me dju måk mom tong næh ryo tji gi',
-    'Nedadgående slag med ydersiden af knyttet hånd'
-  ],
-  [
-    'Håndteknikker',
-    'Palkoop dollyo chigi',
-    'pahl kop dol ljo tji gi',
-    'Cirkelslag med albue'
-  ],
-  [
-    'Håndteknikker',
-    'Palkoop pyojeok chigi',
-    'pahl kop pjo jåk tji gi',
-    'Pletslag med albue'
-  ],
-  [
-    'Håndteknikker',
-    'Yeop jireugi',
-    'yåp dji rø gi',
-    'Sideslag fra hoften med knyttet hånd'
-  ],
-  [
-    'Benteknikker',
-    'Biteureo chagi',
-    'bit ø rå tja gi',
-    'Vridespark'
-  ],
-  [
-    'Benteknikker',
-    'Beodeo chagi',
-    'bår dår tjar gi',
-    'Stempelspark'
-  ],
-  [
-    'Benteknikker',
-    'Ieo chagi',
-    'i år tjar gi',
-    'To ens spark med forskellige ben'
-  ],
-  [
-    'Benteknikker',
-    'Seokeo chagi',
-    'sår kår tjar gi',
-    'To forskellige spark med samme ben'
-  ],
-  [
-    'Benteknikker',
-    'Jijjigki',
-    'dji tjik gi',
-    'Stampe-/trampespark'
-  ]
+const techniques=[
+  ['Standteknikker','Oreun seogi','o røn så gi','Højre stand','stances'],
+  ['Standteknikker','Oen seogi','årn så gi','Venstre stand','stances'],
+  ['Håndteknikker','Me jumeok momtong naeryo chigi','me dju måk mom tong næh ryo tji gi','Nedadgående slag med ydersiden af knyttet hånd','combinations'],
+  ['Håndteknikker','Palkoop dollyo chigi','pahl kop dol ljo tji gi','Cirkelslag med albue','combinations'],
+  ['Håndteknikker','Palkoop pyojeok chigi','pahl kop pjo jåk tji gi','Pletslag med albue','combinations'],
+  ['Håndteknikker','Yeop jireugi','yåp dji rø gi','Sideslag fra hoften med knyttet hånd','hands'],
+  ['Benteknikker','Biteureo chagi','bit ø rå tja gi','Vridespark','kicks'],
+  ['Benteknikker','Beodeo chagi','bår dår tjar gi','Stempelspark','kicks'],
+  ['Benteknikker','Ieo chagi','i år tjar gi','To ens spark med forskellige ben','kickcombos'],
+  ['Benteknikker','Seokeo chagi','sår kår tjar gi','To forskellige spark med samme ben','kickcombos'],
+  ['Benteknikker','Jijjigki','dji tjik gi','Stampe-/trampespark','kicks']
 ].map((t,i)=>({
   id:'t'+i,
   group:t[0],
   k:t[1],
   p:t[2],
-  d:t[3]
+  d:t[3],
+  video:t[4]
 }));
 
-const forms = [
-  {id:'f0',k:'Taegeuk Sah Jang'},
-  {id:'f1',k:'Pyong Cho Dan'}
+const forms=[
+  {id:'f0',k:'Taegeuk Sah Jang',video:'form4'},
+  {id:'f1',k:'Pyong Cho Dan',video:null}
 ];
 
-const exercises = [
+const exercises=[
   {
     id:'one',
     name:'Et-skridtskamp · Han Bon Kireugi',
@@ -327,35 +218,41 @@ const exercises = [
   }
 ];
 
-const key = 'arirang-blaa-v1';
+// Same storage key as the existing trainer.
 
-let saved = {};
-try {
-  saved = JSON.parse(localStorage.getItem(key)||'{}');
-} catch {}
+const storageKey='arirang-blaa-v1';
+let saved={};
 
-const s = {
+try{
+  saved=JSON.parse(localStorage.getItem(storageKey)||'{}')||{};
+}catch{}
+
+const s={
   tab:'home',
   ratings:saved.ratings||{},
   known:saved.known||{},
   checks:saved.checks||{},
+  customVideos:saved.customVideos||{},
   deck:'blå',
   card:0,
   flipped:false,
-  quiz:null
+  quiz:null,
+  openVideo:null,
+  videoError:''
 };
 
-function save() {
-  try {
-    localStorage.setItem(key,JSON.stringify({
+function save(){
+  try{
+    localStorage.setItem(storageKey,JSON.stringify({
       ratings:s.ratings,
       known:s.known,
-      checks:s.checks
+      checks:s.checks,
+      customVideos:s.customVideos
     }));
-  } catch {}
+  }catch{}
 }
 
-function h(x) {
+function h(x){
   return String(x).replace(/[&<>"']/g,c=>({
     '&':'&amp;',
     '<':'&lt;',
@@ -365,10 +262,10 @@ function h(x) {
   }[c]));
 }
 
-function shuffle(a) {
+function shuffle(a){
   a=[...a];
   for(let i=a.length-1;i>0;i--){
-    let j=Math.floor(Math.random()*(i+1));
+    const j=Math.floor(Math.random()*(i+1));
     [a[i],a[j]]=[a[j],a[i]];
   }
   return a;
@@ -390,84 +287,88 @@ const checked=()=>exercises.reduce(
   0
 );
 
-function rating(x) {
-  return `<div>${
-    [[0,'Ikke endnu'],[1,'Øver'],[2,'Sidder ✓']]
-    .map(([n,label])=>`
-      <button
-        class="btn ${s.ratings[x.id]===n?'chosen':'alt'}"
-        data-rate="${x.id}:${n}">
-        ${label}
-      </button>
-    `).join('')
-  }</div>`;
+function go(tab){
+  s.tab=tab;
+  s.openVideo=null;
+  render();
+  window.scrollTo(0,0);
 }
 
-function home() {
+function rating(x){
+  return '<div>'+[
+    [0,'Ikke endnu'],
+    [1,'Øver'],
+    [2,'Sidder ✓']
+  ].map(([n,label])=>`
+    <button
+      class="btn ${s.ratings[x.id]===n?'chosen':'alt'}"
+      data-rate="${x.id}:${n}">
+      ${label}
+    </button>
+  `).join('')+'</div>';
+}
+
+function home(){
   return `
     <h2>Din træningsbase</h2>
     <p class="muted">
       Lidt træning ad gangen – det skal være sjovt!
     </p>
-
     <div class="grid">
       <div class="card">
-        <h3>🧠 ${learned()}/6 nye teoriord</h3>
+        <h3>🧠 ${learned()}/6 teoriord</h3>
         <p>Ord du kan huske</p>
-        <button class="btn" data-tab="cards">
-          Øv ord
-        </button>
+        <button class="btn" data-tab="cards">Øv ord</button>
       </div>
-
       <div class="card">
         <h3>🥋 ${ready()}/13 teknikker og former</h3>
-        <p>Markeret som 'Sidder'</p>
-        <button class="btn" data-tab="tech">
-          Øv teknik
-        </button>
+        <p>Markeret som “Sidder”</p>
+        <button class="btn" data-tab="tech">Øv teknik</button>
       </div>
-
       <div class="card">
         <h3>✅ ${checked()}/24 øvelser</h3>
-        <p>Øvet sammen med instruktør eller forælder</p>
-        <button class="btn" data-tab="drills">
-          Se krav
-        </button>
+        <p>Øvelser og kamprunder</p>
+        <button class="btn" data-tab="drills">Se krav</button>
       </div>
     </div>
-
     <div class="card">
-      <h3>🏆 Miniprøve</h3>
+      <h3>🎬 Nye træningsvideoer</h3>
       <p>
-        12 spørgsmål om teori og teknikker fra 6. kup.
+        Se officiel Kukkiwon-undervisning i Taegeuk Sah
+        Jang og officielle supplerende grundteknikvideoer.
       </p>
-      <button class="btn" data-tab="quiz">
-        Start her
+      <button class="btn" data-tab="videos">
+        Se videoer
       </button>
     </div>
-
+    <div class="card">
+      <h3>🏆 Miniprøve</h3>
+      <p>12 spørgsmål om teori og teknikker fra 6. kup.</p>
+      <button class="btn" data-tab="quiz">
+        Tag prøven
+      </button>
+    </div>
     <div class="note">
-      Forslag: 3 minutter teori + 5 minutter teknikker,
-      nogle gange om ugen. Nedtagninger, selvforsvar
-      og kamp skal øves med kvalificeret opsyn.
+      Træn gerne 3 minutter teori og 5 minutter teknik
+      ad gangen. Nedtagninger, frigørelser og kamp
+      skal øves med kvalificeret opsyn.
     </div>
   `;
 }
 
-function deck() {
+function deck(){
   return words.filter(
     w=>s.deck==='alle'||s.deck===w.level
   );
 }
 
-function cards() {
+function cards(){
   const d=deck();
   const w=d[s.card%d.length];
 
   return `
     <h2>🧠 Flashcards</h2>
     <p>Sig betydningen, før du vender kortet.</p>
-
     <div>
       ${[
         ['blå','Nye ord'],
@@ -481,19 +382,14 @@ function cards() {
         </button>
       `).join('')}
     </div>
-
     <div class="flash">
       <small>Kort ${s.card+1} af ${d.length}</small>
       <strong>${h(w.k)}</strong>
-
       ${s.flipped?`
         <p>[${h(w.p)}]</p>
         <h3>${h(w.d)}</h3>
-      `:`
-        <p>Hvad betyder det?</p>
-      `}
+      `:'<p>Hvad betyder det?</p>'}
     </div>
-
     ${s.flipped?`
       <button class="btn alt" data-know="0">
         Øv igen
@@ -506,11 +402,9 @@ function cards() {
         Vis svaret
       </button>
     `}
-
     <button class="btn alt" data-next="1">
       Næste →
     </button>
-
     <p class="muted">
       Lært i denne gruppe:
       ${d.filter(x=>s.known[x.id]).length}/${d.length}
@@ -518,14 +412,148 @@ function cards() {
   `;
 }
 
-function tech() {
+// Only properly formatted YouTube IDs are embedded.
+
+function parseYoutube(url){
+  try{
+    const u=new URL(url.trim());
+    const host=u.hostname.toLowerCase();
+    let id='';
+
+    if(host==='youtu.be'||host==='www.youtu.be'){
+      id=u.pathname.split('/')[1];
+    }else if([
+      'youtube.com',
+      'www.youtube.com',
+      'm.youtube.com',
+      'youtube-nocookie.com',
+      'www.youtube-nocookie.com'
+    ].includes(host)){
+      id=u.searchParams.get('v')||(
+        (u.pathname.match(
+          /^\/(embed|shorts|live)\/([^/?#]+)/
+        )||[])[2]
+      )||'';
+    }
+
+    return /^[\w-]{11}$/.test(id)?id:null;
+  }catch{
+    return null;
+  }
+}
+
+function videoFor(item){
+  const id=s.customVideos[item.id];
+
+  if(id&&/^[\w-]{11}$/.test(id)){
+    return {
+      id,
+      title:'Dit eget videolink',
+      source:'Tilføjet på denne enhed',
+      exact:null,
+      description:'Kontrollér med træneren, at dette viser klubbens version.'
+    };
+  }
+
+  return item.video?VIDEOS[item.video]:null;
+}
+
+function videoBox(item){
+  const v=videoFor(item);
+  const own=!!s.customVideos[item.id];
+
+  return `
+    <div class="video-box">
+      ${v?`
+        <span class="badge ${v.exact?'exact':''}">
+          ${v.exact?'✓ Præcis form':
+            own?'★ Eget link':
+            '↔ Supplerende grundvideo'}
+        </span>
+        <p>
+          <strong>${h(v.title)}</strong>
+          · ${h(v.source)}
+        </p>
+        <p class="muted">${h(v.description)}</p>
+        ${s.openVideo===item.id?`
+          <div class="player">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/${v.id}?playsinline=1&rel=0"
+              title="${h(v.title)}"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <button class="btn alt" data-closevideo="1">
+            Luk afspiller
+          </button>
+        `:`
+          <button class="btn" data-openvideo="${item.id}">
+            ▶ Se video her
+          </button>
+        `}
+        <p>
+          <a class="link"
+             href="https://www.youtube.com/watch?v=${v.id}"
+             target="_blank"
+             rel="noopener noreferrer">
+            Åbn på YouTube ↗
+          </a>
+          <small>(hvis afspilleren er blokeret)</small>
+        </p>
+      `:`
+        <p><strong>Ingen verificeret video endnu.</strong></p>
+        <p class="muted">
+          Denne øvelse findes ikke i de officielt
+          verificerede videoer, vi har fundet.
+          Brug klubbens egen demonstration.
+        </p>
+      `}
+      <details class="add-video">
+        <summary>
+          ${own?'Udskift eller fjern videolink':
+            'Har I et præcist link fra Arirang? Tilføj det her'}
+        </summary>
+        <label for="video-${item.id}">
+          Indsæt YouTube-link
+        </label>
+        <input
+          id="video-${item.id}"
+          type="url"
+          inputmode="url"
+          data-video-input="${item.id}"
+          placeholder="https://www.youtube.com/watch?v=...">
+        <button class="btn alt" data-savevideo="${item.id}">
+          Gem link
+        </button>
+        ${own?`
+          <button class="btn alt"
+                  data-removevideo="${item.id}">
+            Fjern eget link
+          </button>
+        `:''}
+        <small>Gemmes kun i denne browser.</small>
+        ${s.videoError===item.id?`
+          <p class="error">
+            Indsæt et gyldigt YouTube-link.
+          </p>
+        `:''}
+      </details>
+    </div>
+  `;
+}
+
+function tech(){
   return `
     <h2>🥋 Teknikker</h2>
     <p class="muted">
-      Træn ud fra de bevægelser,
-      hun har lært i klubben.
+      Under hver teknik kan hun se en relateret officiel
+      video. Videoerne er markeret, når de er
+      <strong>supplerende</strong> frem for en præcis
+      demonstration.
     </p>
-
     ${[
       'Standteknikker',
       'Håndteknikker',
@@ -533,69 +561,111 @@ function tech() {
     ].map(g=>`
       <div class="card">
         <h3>${g}</h3>
-
         ${techniques.filter(x=>x.group===g).map(x=>`
-          <div class="term">
+          <section class="term">
             <h3>${h(x.k)}</h3>
             <p>${h(x.d)}</p>
             <p class="muted">
               Udtale: [${h(x.p)}]
             </p>
+            ${videoBox(x)}
             ${rating(x)}
-          </div>
+          </section>
         `).join('')}
       </div>
     `).join('')}
   `;
 }
 
-function drills() {
+function drills(){
   return `
     <h2>✅ Praktiske øvelser</h2>
-
     <div class="card">
       <h3>Poomse / Hyung</h3>
-
       ${forms.map(f=>`
-        <div class="term">
+        <section class="term">
           <h3>${h(f.k)}</h3>
+          ${videoBox(f)}
           ${rating(f)}
-        </div>
+        </section>
       `).join('')}
-
-      <p class="muted">
-        Rækkefølgen i serierne står ikke
-        trin for trin i pensum.
-      </p>
     </div>
-
     ${exercises.map(e=>`
       <div class="card">
         <h3>${h(e.name)}</h3>
         <p>${h(e.desc)}</p>
-
         ${Array.from({length:e.count},(_,i)=>`
           <label class="check">
-            <input
-              type="checkbox"
-              data-check="${e.id+i}"
-              ${s.checks[e.id+i]?'checked':''}>
+            <input type="checkbox"
+                   data-check="${e.id+i}"
+                   ${s.checks[e.id+i]?'checked':''}>
             ${e.id==='spar'?'Runde':'Øvelse'} ${i+1}
           </label>
         `).join('')}
       </div>
     `).join('')}
-
     <div class="note">
-      Antallet er fra pensummet. De enkelte
-      kampkombinationer er ikke beskrevet der,
-      så listen er pladsholdere til dem,
-      instruktøren lærer hende.
+      Pensummet angiver antallet af kampkombinationer,
+      men ikke deres præcise trin. Listerne er til at
+      afkrydse det, træneren lærer hende.
     </div>
   `;
 }
 
-function startQuiz() {
+function videos(){
+  return `
+    <h2>🎬 Officielle træningsvideoer</h2>
+    <p>
+      Alle videoer kommer fra Kukkiwon eller et
+      officielt koreansk kulturcenter. Kun den første
+      video er verificeret som en
+      <strong>præcis</strong> match til
+      6. kup-pensummet.
+    </p>
+    ${Object.entries(VIDEOS).map(([key,v])=>`
+      <div class="card">
+        <span class="badge ${v.exact?'exact':''}">
+          ${v.exact?'✓ Præcis form':
+            '↔ Supplerende grundtræning'}
+        </span>
+        <h3 style="margin-top:10px">${h(v.title)}</h3>
+        <p class="muted">
+          ${h(v.source)} · ${h(v.description)}
+        </p>
+        ${s.openVideo==='library-'+key?`
+          <div class="player">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/${v.id}?playsinline=1&rel=0"
+              title="${h(v.title)}"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <button class="btn alt" data-closevideo="1">
+            Luk afspiller
+          </button>
+        `:`
+          <button class="btn"
+                  data-openvideo="library-${key}">
+            ▶ Se video
+          </button>
+        `}
+        <p>
+          <a class="link"
+             target="_blank"
+             rel="noopener noreferrer"
+             href="https://www.youtube.com/watch?v=${v.id}">
+            Åbn på YouTube ↗
+          </a>
+        </p>
+      </div>
+    `).join('')}
+  `;
+}
+
+function startQuiz(){
   const entries=[
     ...words.filter(x=>x.level==='blå'),
     ...shuffle(techniques).slice(0,6)
@@ -603,21 +673,19 @@ function startQuiz() {
 
   s.quiz={
     qs:shuffle(entries).map(x=>{
-      let pool=words.some(w=>w.id===x.id)
-        ? words
-        : techniques;
-
-      let choices=shuffle([
-        x.d,
-        ...shuffle(
-          pool.filter(y=>y.id!==x.id).map(y=>y.d)
-        ).filter(y=>y!==x.d).slice(0,3)
-      ]);
+      const pool=words.some(w=>w.id===x.id)
+        ?words
+        :techniques;
 
       return {
         q:`Hvad betyder “${x.k}”?`,
         a:x.d,
-        choices
+        choices:shuffle([
+          x.d,
+          ...shuffle(
+            pool.filter(y=>y.id!==x.id).map(y=>y.d)
+          ).filter(y=>y!==x.d).slice(0,3)
+        ])
       };
     }),
     index:0,
@@ -628,14 +696,13 @@ function startQuiz() {
   render();
 }
 
-function quiz() {
-  if(!s.quiz) {
+function quiz(){
+  if(!s.quiz){
     return `
       <h2>🏆 Miniprøve</h2>
       <div class="card">
         <p>
           12 spørgsmål om koreanske ord og teknikker.
-          Du får resultatet til sidst.
         </p>
         <button class="btn" data-start="1">
           Start prøven
@@ -646,15 +713,15 @@ function quiz() {
 
   const qz=s.quiz;
 
-  if(qz.index===qz.qs.length) {
+  if(qz.index===qz.qs.length){
     return `
       <h2>🏆 Resultat</h2>
       <div class="card">
         <h2>${qz.score} ud af ${qz.qs.length} rigtige!</h2>
         <p>
           ${qz.score===12
-            ? 'Fantastisk! Alle rigtige! 🌟'
-            : 'Godt øvet! Du kan prøve igen, når du vil. 💪'}
+            ?'Fantastisk! Alle rigtige! 🌟'
+            :'Godt øvet! Prøv igen når du har lyst. 💪'}
         </p>
         <button class="btn" data-start="1">
           Prøv igen
@@ -667,10 +734,8 @@ function quiz() {
 
   return `
     <h2>🏆 Spørgsmål ${qz.index+1}/12</h2>
-
     <div class="card">
       <h3>${h(q.q)}</h3>
-
       ${q.choices.map((v,i)=>`
         <button
           class="option
@@ -681,7 +746,6 @@ function quiz() {
           ${h(v)}
         </button>
       `).join('')}
-
       ${qz.selected>=0?`
         <p>Rigtigt svar: <b>${h(q.a)}</b></p>
         <button class="btn" data-advance="1">
@@ -692,12 +756,9 @@ function quiz() {
   `;
 }
 
-function render() {
-  document.querySelectorAll('nav button').forEach(
-    b=>b.classList.toggle(
-      'on',
-      b.dataset.tab===s.tab
-    )
+function render(){
+  document.querySelectorAll('nav button').forEach(b=>
+    b.classList.toggle('on',b.dataset.tab===s.tab)
   );
 
   document.getElementById('progress').textContent=
@@ -707,7 +768,7 @@ function render() {
     (ready()/13*100)+'%';
 
   document.getElementById('view').innerHTML=({
-    home,cards,tech,drills,quiz
+    home,cards,tech,drills,videos,quiz
   })[s.tab]();
 }
 
@@ -717,23 +778,21 @@ document.addEventListener('click',e=>{
 
   const d=b.dataset;
 
-  if(d.tab) {
-    s.tab=d.tab;
-    render();
-    window.scrollTo(0,0);
+  if(d.tab){
+    go(d.tab);
 
-  } else if(d.deck) {
+  }else if(d.deck){
     s.deck=d.deck;
     s.card=0;
     s.flipped=false;
     render();
 
-  } else if(d.flip) {
+  }else if(d.flip){
     s.flipped=true;
     render();
 
-  } else if(d.next||d.know!==undefined) {
-    if(d.know!==undefined) {
+  }else if(d.next||d.know!==undefined){
+    if(d.know!==undefined){
       s.known[deck()[s.card].id]=d.know==='1';
       save();
     }
@@ -741,31 +800,71 @@ document.addEventListener('click',e=>{
     s.flipped=false;
     render();
 
-  } else if(d.rate) {
+  }else if(d.rate){
     const [id,n]=d.rate.split(':');
     s.ratings[id]=Number(n);
     save();
     render();
 
-  } else if(d.start) {
+  }else if(d.openvideo){
+    s.openVideo=d.openvideo;
+    s.videoError='';
+    render();
+
+  }else if(d.closevideo){
+    s.openVideo=null;
+    render();
+
+  }else if(d.savevideo){
+    const id=d.savevideo;
+    const input=document.querySelector(
+      `[data-video-input="${id}"]`
+    );
+    const videoId=parseYoutube(input?.value||'');
+
+    if(!videoId){
+      s.videoError=id;
+      const notice=input?.parentElement?.querySelector('.error');
+      if(!notice){
+        const p=document.createElement('p');
+        p.className='error';
+        p.textContent='Indsæt et gyldigt YouTube-link.';
+        input?.parentElement?.append(p);
+      }
+      return;
+    }
+
+    s.customVideos[id]=videoId;
+    s.videoError='';
+    save();
+    render();
+
+  }else if(d.removevideo){
+    delete s.customVideos[d.removevideo];
+    s.openVideo=null;
+    save();
+    render();
+
+  }else if(d.start){
     startQuiz();
 
-  } else if(
+  }else if(
     d.answer!==undefined &&
     s.quiz &&
     s.quiz.selected<0
-  ) {
+  ){
     s.quiz.selected=Number(d.answer);
 
     if(
       s.quiz.qs[s.quiz.index].choices[s.quiz.selected]
       ===s.quiz.qs[s.quiz.index].a
-    ) {
+    ){
       s.quiz.score++;
     }
+
     render();
 
-  } else if(d.advance) {
+  }else if(d.advance){
     s.quiz.index++;
     s.quiz.selected=-1;
     render();
@@ -775,7 +874,7 @@ document.addEventListener('click',e=>{
 document.addEventListener('change',e=>{
   const el=e.target.closest('[data-check]');
 
-  if(el) {
+  if(el){
     s.checks[el.dataset.check]=el.checked;
     save();
     render();

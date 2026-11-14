@@ -881,6 +881,107 @@ document.addEventListener('change',e=>{
   }
 });
 
+/*
+ * ARIRANG OFFICIAL VIDEO UPGRADE
+ *
+ * Sources: Kukkiwon / World Taekwondo Headquarters
+ * No third-party instructional channels included.
+ *
+ * exact: true  = exact required form
+ * exact: false = related official reference only
+ */
+
+// Remove previously included non-approved sources.
+Object.keys(VIDEOS).forEach(key => {
+  delete VIDEOS[key];
+});
+
+// Official Kukkiwon video library.
+Object.assign(VIDEOS, {
+  form4: {
+    id: 'Fc75IxwD5VY',
+    title: 'Taegeuk 4 Jang – undervisning (2025)',
+    source: 'Kukkiwon',
+    exact: true,
+    description:
+      'Præcis den krævede poomse. Officiel undervisning ' +
+      'med forklaring af formens bevægelser.'
+  },
+
+  form4demo: {
+    id: 'Lt917gacJho',
+    title: 'Taegeuk 4 Jang – demonstration',
+    source: 'Kukkiwon',
+    exact: true,
+    description:
+      'Alternativ officiel demonstration af Taegeuk Sah Jang.'
+  },
+
+  form5moves: {
+    id: '4VPFBUq0v2M',
+    title: 'Taegeuk 5 Jang – håndteknikker',
+    source: 'Kukkiwon',
+    exact: false,
+    description:
+      'Relateret undervisning i nedadgående hammerfist, ' +
+      'albueslag og albue-pletslag. Teknikkerne indgår ' +
+      'i en anden poomse og er ikke særskilte øvelser.'
+  },
+
+  kicking: {
+    id: 'Wcqgi72KQlQ',
+    title: 'Chagi – sparketeknikker',
+    source: 'Kukkiwon',
+    exact: false,
+    description:
+      'Officiel reference til kamp-spark. Kukkiwon ' +
+      'omtaler Biteureo Chagi blandt teknikkerne. ' +
+      'Ikke en verificeret isoleret vejledning.'
+  },
+
+  throwing: {
+    id: 'Y8lsc7-f_fk',
+    title: 'Neomgigi – nedtagninger',
+    source: 'Kukkiwon',
+    exact: false,
+    description:
+      'Officiel reference til nedtagninger. ' +
+      'Ikke de specifikke Arirang-kombinationer.'
+  },
+
+  locking: {
+    id: 'sK_TEBd0S-4',
+    title: 'Kkeokgi – ledlåse',
+    source: 'Kukkiwon',
+    exact: false,
+    description:
+      'Officiel reference til ledlåse. Ikke verificeret ' +
+      'som Arirangs tre frigørelser fra skulder- og brystgreb.'
+  }
+});
+
+// Assign only references with a documented connection.
+// All other techniques deliberately receive no built-in video.
+const techniqueVideos = {
+  'Me jumeok momtong naeryo chigi': 'form5moves',
+  'Palkoop dollyo chigi': 'form5moves',
+  'Palkoop pyojeok chigi': 'form5moves',
+  'Biteureo chagi': 'kicking'
+};
+
+techniques.forEach(technique => {
+  technique.video = techniqueVideos[technique.k] || null;
+});
+
+// Forms.
+forms.forEach(form => {
+  form.video =
+    form.k === 'Taegeuk Sah Jang' ? 'form4' : null;
+});
+
+// Existing locally saved custom links are preserved.
+// No third-party video is automatically added.
+
 render();
 </script>
 </body>
